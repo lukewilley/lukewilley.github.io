@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <div class="logo">
+        <img src="blaster-games-logo.png" alt="Blaster Games Logo" class="logo-img">
+        <span>Blaster Games</span>
+    </div>
+    
+    <title>Blaster Games</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <style>
+        /* Clean, retro-modern gaming aesthetic */
+        :root {
+            --bg-color: #791e1e;
+            --card-bg: #696c72;
+            --text-color: #ffffff;
+            --accent-color: #ffffff; /* Soft blue */
+            --action-color: #f43f5e; /* Vibrant pink/red for CTA button */
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            width: 100%;
+            margin: 0 auto;        /* Automatically centers the entire header on the screen */
+            display: flex;
+            justify-content: space-between;
+            align-items: left;
+            padding: 20px 40px; /* Pads the sides, reduces bottom padding to bring it closer to the title */
+            box-sizing: border-box;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: bold;
+            font-size: 1.5rem;
+            color: var(--accent-color);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .logo-img {
+            width: 64px;           /* Controls how big your logo icon looks */
+            height: 64px;
+            object-fit: contain;   /* Prevents the image from stretching weirdly */
+            border-radius: 104px;
+        }
+
+        nav a {
+            color: var(--text-color);
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        main {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            letter-spacing: -1px;
+        }
+
+        .tagline {
+            font-size: 1.25rem;
+            color: #ffffff;
+            margin-bottom: 40px;
+        }
+
+        /* The Hero Media Placeholder */
+        .gameplay-container {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            background-color: var(--card-bg);
+            border: 3px solid var(--accent-color);
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 40px;
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.5);
+            overflow: hidden;
+        }
+
+        .gameplay-placeholder {
+            color: #ffffff;
+            font-style: italic;
+        }
+
+        .gameplay-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Call To Action Button */
+        .cta-btn {
+            background-color: var(--action-color);
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 10px 15px -3px rgba(244, 63, 94, 0.4);
+            transition: transform 0.1s, box-shadow 0.2s;
+        }
+
+        .cta-btn:hover {
+            transform: scale(1.03);
+            box-shadow: 0 15px 20px -3px rgba(244, 63, 94, 0.6);
+        }
+
+        /* Features Section */
+        .features {
+            margin-top: 60px;
+            text-align: left;
+        }
+
+        .features h2 {
+            text-align: center;
+            color: var(--accent-color);
+            font-size: 2rem;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .feature-card {
+            background-color: var(--card-bg);
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .feature-card h3 {
+            margin-top: 0;
+            font-size: 1.2rem;
+        }
+
+        .feature-card p {
+            color: #ffffff;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin-bottom: 0;
+        }
+
+        footer {
+            margin-top: 0px;
+            padding: 0px;
+            color: #ffffff;
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        
+        <nav>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Upcoming Releases</h1>
+        <p class="tagline">Blou's Time Machine</p>
+
+        <div class="gameplay-container">
+            <div class="gameplay-placeholder">Gameplay Trailer</div>
+        </div>
+
+        <button class="cta-btn" onclick="window.open('https://itch.io', '_blank')">Play Alpha Build</button>
+
+    </main>
+
+    <footer>
+        &copy; 2026 Blaster Games
+    </footer>
+
+</body>
+</html>
