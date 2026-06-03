@@ -75,7 +75,73 @@
             z-index: 2; 
             color: #ffffff;
         }
+        /* Container holding both buttons */
+    .hero-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin-bottom: -100px;
+        padding: 100px 00px;
+        width: 100%;
+        position: relative;
+        z-index: 3;
+    }
 
+    /* Base styling for both hero buttons */
+    .hero-buttons a {
+        display: inline-block;
+        padding: 14px 28px;
+        font-size: 1.1rem;
+        font-weight: bold;
+        text-decoration: none;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        border-radius: 8px;
+        transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+    }
+
+    /* Premium Steam Button Styles */
+    .btn-steam {
+        background: linear-gradient(180deg, #101d2a, #0b121a);
+        color: #ffffff; /* Steam Blue */
+        border: 2px solid #66c0f4;
+        box-shadow: 0 4px 15px rgba(102, 192, 244, 0.2);
+    }
+
+    .btn-steam:hover {
+        background: #5182b1;
+        color: #ffffff;
+        border-color: #66c0f4;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(102, 192, 244, 0.4);
+    }
+
+    /* Premium Trailer Button Styles */
+    .btn-trailer {
+        background-color: var(--action-color); /* Your vibrant pink/red */
+        color: #ffffff;
+        border: 2px solid;
+        box-shadow: 0 4px 15px rgba(244, 63, 94, 0.3);
+    }
+
+    .btn-trailer:hover {
+        background-color: #e9335a; /* Slightly darker shade on hover */
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(244, 63, 94, 0.5);
+    }
+
+    /* Makes buttons scale nicely on mobile screens */
+    @media (max-width: 600px) {
+        .hero-buttons {
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+        }
+        .hero-buttons a {
+            width: 80%;
+            max-width: 300px;
+        }
+    }
         .hero-content h1 {
             font-size: 3rem;
             margin-bottom: 10px;
@@ -191,27 +257,6 @@
             object-fit: cover;
         }
 
-        /* Call To Action Button */
-        .cta-btn {
-            background-color: var(--action-color);
-            color: white;
-            font-size: 1.5rem;
-            font-weight: bold;
-            padding: 15px 40px;
-            border: none;
-            border-radius: 50px;
-            cursor: pointer;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            box-shadow: 0 10px 15px -3px rgba(244, 63, 94, 0.4);
-            transition: transform 0.1s, box-shadow 0.2s;
-        }
-
-        .cta-btn:hover {
-            transform: scale(1.03);
-            box-shadow: 0 15px 20px -3px rgba(244, 63, 94, 0.6);
-        }
-
         /* Features Section */
         .features {
             margin-top: 60px;
@@ -303,6 +348,15 @@
                 <a href="#trailer" class="btn-secondary">Watch The Trailer</a>
             </div> -->
             
+        </div>
+        <div class="hero-buttons">
+            <a href="https://store.steampowered.com" target="_blank" rel="noopener noreferrer" class="btn-steam">
+                Wishlist on Steam
+            </a>
+            
+            <a href="#gameplay-anchor" class="btn-trailer">
+                Watch Trailer
+            </a>
         </div>
     </section>
     
