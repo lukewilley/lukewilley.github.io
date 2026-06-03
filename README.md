@@ -1,4 +1,3 @@
 # Blaster Games Website
-A website for Blaster Games.
-To run website:
-[lukewilley.github.io](url)
+My website for Blaster Games.
+Check out the live site here: [Blaster Games Website](https://lukewilley.github.io/)
