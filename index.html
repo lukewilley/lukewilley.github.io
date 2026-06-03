@@ -76,8 +76,8 @@
         /* --- HERO PROMO SECTION --- */
         .hero-promo {
             width: 100%;
-            min-height: 600px; 
-            background-image: url('images/promo4.png'); 
+            min-height: 500px; 
+            background-image: url('images/promo3.png'); 
             background-size: cover;
             background-position: bottom center;
             position: relative; 
@@ -86,19 +86,22 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 60px 20px;
+            padding: 50px 20px;
             box-sizing: border-box;
         }
-        @media (max-width: 768px) {
-            .hero-promo {
-                background-image: url('images/promo3.png'); /* Overrides to just center on mobile devices */
-            }
-        }
+       .hero-player {
+            width: 100%;
+            min-height: 00px; 
+            background-size: cover;
+            display: flex;
+            box-sizing: border-box;
+            background-image: url('images/sprite.png');
+       }
         .hero-promo::before {
             content: '';
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(0, 0, 0, 0.4); 
+            background: rgba(0, 0, 0, 0.3); 
             z-index: 1;
         }
 
@@ -125,7 +128,8 @@
             height: auto;       
             display: block;
             filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.7)); 
-            
+            position: relative;
+            padding-top: 50px;
             -webkit-user-select: none; 
             -ms-user-select: none;     
             user-select: none;         
@@ -141,7 +145,7 @@
             width: 100%;
             position: relative;
             z-index: 3;
-            margin-top: 10px;
+            
         }
         
         .hero-buttons a {
@@ -295,6 +299,13 @@
                 max-width: 300px;
             }
         }
+        .hero-player-sprite {
+            width: 200px; /* upscale to desired size, e.g., 128px is 8x scaling */
+            image-rendering: pixelated; /* ensures the browser upscales with sharp edges */
+            position: relative;
+            padding-bottom: 70px;
+            z-index: 1;
+        }
     </style>
 </head>
 <body>
@@ -318,6 +329,7 @@
                 <img src="images/title.png" alt="Title Logo" class="hero-title-img">
             </div>
         </div>
+        <img src="images/sprite.png" alt="Player Character" class="hero-player-sprite" sizes="64x64">
         <div class="hero-buttons">
             <a href="https://store.steampowered.com" target="_blank" rel="noopener noreferrer" class="btn-steam">
                 Wishlist on Steam
