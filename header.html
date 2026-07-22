@@ -1,7 +1,13 @@
+<head>
+  <meta charset="UTF-8">
+  <title>Blaster Games</title>
+  <!-- The leading slash / ensures it works from any folder level -->
+  <link rel="stylesheet" href="/style.css"> 
+</head>
     <header>
         <div class="logo">
-            <a href="../index.html">
-                <img src="../images/blaster-games-logo.png" alt="Blaster Games Logo" class="logo-img">
+            <a href="/index.html">
+                <img src="/images/blaster-games-logo.png" alt="Blaster Games Logo" class="logo-img">
             </a>
         </div>
         <nav>
@@ -22,7 +28,7 @@
             align-items: center;   
             padding: 20px 40px;
             box-sizing: border-box;
-            gap: 40px
+            gap: 40px;
         }
 
         .logo {
@@ -79,5 +85,10 @@
             nav {
                 margin-left: 0;
             }
+        }
+        *, *::before, *::after {
+            box-sizing: border-border; /* Forces padding to stay INSIDE element height */
+            margin: 0;
+            padding: 0;
         }
 </style>

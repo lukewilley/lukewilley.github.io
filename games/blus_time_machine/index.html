@@ -1,0 +1,261 @@
+<div id="header-placeholder">
+    <script>
+        fetch('../../header.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('header-placeholder').innerHTML = data;
+        });
+    </script>
+</div>
+<main class="game-product-container">
+  
+    <!-- LEFT COLUMN: Main Screenshot & Thumbnail Carousel -->
+  <section class="gallery-column">
+    <div class="main-display">
+      <button class="nav-btn prev-btn" onclick="changeSlide(-1)">&lsaquo;</button>
+      <img id="current-screenshot" src="screenshots\1-1-1.png" alt="Featured Screenshot">
+      <button class="nav-btn next-btn" onclick="changeSlide(1)">&rsaquo;</button>
+    </div>
+
+    <!-- Thumbnail Strip -->
+    <div class="thumbnail-strip">
+      <img src="screenshots\1-1-1.png" class="thumb active" onclick="setSlide(0)" alt="Thumb 1">
+      <img src="screenshots\1-1-2.png" class="thumb" onclick="setSlide(1)" alt="Thumb 2">
+      <img src="screenshots\1-1-3.png" class="thumb" onclick="setSlide(2)" alt="Thumb 3">
+      <img src="screenshots\2-1-1.png" class="thumb" onclick="setSlide(3)" alt="Thumb 4">
+      <img src="screenshots\2-2-1.png" class="thumb" onclick="setSlide(4)" alt="Thumb 5">
+    </div>
+  </section>
+
+  <!-- RIGHT COLUMN: Title, Price, and Buy Action -->
+  <section class="details-column">
+    <span class="category-tag">Games</span>
+    <h1 class="game-title">Blu's Time Machine</h1>
+
+    <div class="platform-badge">PC / Steam</div>
+
+    <div class="price-container">
+      <span class="game-price">$4.99</span>
+    </div>
+
+    <a href="https://store.steampowered.com/app/YOUR_STEAM_ID" target="_blank" rel="noopener" class="buy-button" color="accent">
+      
+      Wishlist on Steam
+    </a>
+
+    <p class="purchase-note">Digital download available via Steam.</p>
+
+</section>
+<div id="footer-placeholder">
+        <script>
+            fetch('/../../footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            });
+        </script>
+    </div>  
+</main>
+
+
+
+</body>
+<style>
+html, body {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.game-product-container {
+  clear: both;
+  margin-top: 60px; /* Adjust this value if you need more or less breathing room */
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 40px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 20px;
+}
+
+/* Stack into a single column on smaller screens/mobile */
+@media (max-width: 850px) {
+  .game-product-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* LEFT COLUMN: Gallery */
+.main-display {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 16px;
+  overflow: hidden;
+  background-color: #000;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.main-display img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Arrow Navigation Buttons */
+.nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border: none;
+  font-size: 2rem;
+  padding: 10px 16px;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background 0.2s;
+  user-select: none;
+}
+
+.nav-btn:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.prev-btn { left: 16px; }
+.next-btn { right: 16px; }
+
+/* Thumbnail Strip */
+.thumbnail-strip {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+}
+
+.thumb {
+  width: 100px;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 8px;
+  cursor: pointer;
+  opacity: 0.6;
+  border: 2px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.thumb:hover {
+  opacity: 0.9;
+}
+
+.thumb.active {
+  opacity: 1;
+  border-color: #e60012; /* Nintendo Red (change to your primary accent color) */
+}
+
+/* RIGHT COLUMN: Product Info */
+.category-tag {
+  color: #888;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.game-title {
+  font-size: 2.2rem;
+  margin: 8px 0 16px;
+  line-height: 1.2;
+}
+
+.platform-badge {
+  display: inline-block;
+  background: #f0f0f0;
+  color: #333;
+  padding: 4px 12px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 24px;
+}
+
+.game-price {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+/* Big Buy Button */
+.buy-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: #e60012; /* Accent Color */
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 16px 24px;
+  border-radius: 12px;
+  margin-top: 24px;
+  box-shadow: 0 4px 14px rgba(230, 0, 18, 0.3);
+  transition: transform 0.2s, background 0.2s;
+}
+
+.buy-button:hover {
+  transform: translateY(-2px);
+  background: #cc0010;
+}
+
+.purchase-note {
+  font-size: 0.85rem;
+  color: #777;
+  margin-top: 12px;
+}
+
+body {
+  /* Match this number to the height of your top nav bar */
+  padding-top: 80px; 
+}
+</style>
+
+
+<script>
+  // Array of all your screenshot URLs
+  const screenshots = [
+    "screenshots\\1-1-1.png",
+    "screenshots\\1-1-2.png",
+    "screenshots\\1-1-3.png",
+    "screenshots\\2-1-1.png",
+    "screenshots\\2-2-1.png"
+  ];
+
+  let currentIndex = 0;
+  const mainImage = document.getElementById("current-screenshot");
+  const thumbnails = document.querySelectorAll(".thumb");
+
+  function setSlide(index) {
+    currentIndex = index;
+    updateGallery();
+  }
+
+  function changeSlide(direction) {
+    currentIndex = (currentIndex + direction + screenshots.length) % screenshots.length;
+    updateGallery();
+  }
+
+  function updateGallery() {
+    mainImage.src = screenshots[currentIndex];
+    
+    // Update active border highlight on thumbnails
+    thumbnails.forEach((thumb, i) => {
+      if (i === currentIndex) {
+        thumb.classList.add("active");
+      } else {
+        thumb.classList.remove("active");
+      }
+    });
+  }
+
+</script>
+</html>
+
