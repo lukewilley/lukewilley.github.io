@@ -1,0 +1,98 @@
+
+<section id="games" class="games-section">
+    <body>
+    <div id="header-placeholder">
+        <script>
+            fetch('header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+            });
+        </script>
+    </div>
+    </body>
+  
+  <div class="games-grid">
+    <!-- Game Card 1 -->
+    <a href="https://store.steampowered.com/app/YOUR_GAME_ID" target="_blank" class="game-capsule">
+      <img src="images/capsules/blus_time_machine_small_capsule.png" alt="Blu's Time Machine Header" loading="lazy">
+      <div class="capsule-overlay">
+        <span class="view-btn">Wishlist on Steam&rarr;</span>
+      </div>
+    </a>
+  </div>
+
+</section>
+
+<style>
+    /* Container for the grid */
+.games-grid {
+  display: grid;
+  /* Automatically wraps items into a grid where each column fits ~462px */
+  grid-template-columns: repeat(auto-fill, minmax(320px, 462px));
+  gap: 24px;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* Individual Capsule Card */
+.game-capsule {
+  position: relative;
+  display: block;
+  width: 100%;
+  max-width: 462px;
+  /* Enforces the exact Steam Header ratio (462 / 174) regardless of screen size */
+  aspect-ratio: 462 / 174; 
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  text-decoration: none;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* Image behavior inside capsule */
+.game-capsule img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Keeps image crisp without stretching */
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+/* Hover Zoom & Elevation */
+.game-capsule:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.game-capsule:hover img {
+  transform: scale(1.05); /* Subtle zoom effect */
+}
+
+/* Dark gradient overlay for title text */
+.capsule-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0) 60%);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 14px 16px;
+  opacity: 0.9;
+  transition: opacity 0.25s ease;
+}
+
+.game-title {
+  color: #ffffff;
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.view-btn {
+  color: #ffcc00; /* Accent color */
+  font-family: sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+</style>
