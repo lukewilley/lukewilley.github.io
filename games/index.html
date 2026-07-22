@@ -3,7 +3,7 @@
     <body>
     <div id="header-placeholder">
         <script>
-            fetch('header.html')
+            fetch('../header.html')
             .then(response => response.text())
             .then(data => {
                 document.getElementById('header-placeholder').innerHTML = data;
@@ -15,7 +15,7 @@
   <div class="games-grid">
     <!-- Game Card 1 -->
     <a href="https://store.steampowered.com/app/YOUR_GAME_ID" target="_blank" class="game-capsule">
-      <img src="images/capsules/blus_time_machine_small_capsule.png" alt="Blu's Time Machine Header" loading="lazy">
+      <img src="../images/capsules/blus_time_machine_small_capsule.png" alt="Blu's Time Machine Header" loading="lazy">
       <div class="capsule-overlay">
         <span class="view-btn">Wishlist on Steam&rarr;</span>
       </div>
