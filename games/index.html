@@ -56,21 +56,24 @@
   padding: 20px;
 }
 /* Page Layout Wrapper */
+/* Page Layout Wrapper */
 .content-wrapper {
-  padding-top: 48px;     /* Increases distance between header and game card */
-  padding-left: 48px;    /* Pushes content comfortably away from the left screen edge */
+  padding-top: 48px;
   padding-bottom: 48px;
-  max-width: 1200px;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center; /* Centers items horizontally on all screens */
 }
 /* Card Container */
 .game-card {
-  width: 300px;
+  width: 90%;            /* Allows fluid shrinking on tiny screens */
+  max-width: 300px;      /* Caps maximum size on larger displays */
+  margin: 0 auto;        /* Fallback auto-margin alignment */
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 12px;
-  border-radius: 1px; /* Sharp, straight edges */
-  margin-left: 24px; /* Adds space so it doesn't touch the left edge */
+  gap: 16px;
 }
 
 /* Image Anchor Container */
@@ -122,12 +125,17 @@
   transform: scale(1.1);
 }
 
-
+/* Ensure the body doesn't add unwanted outer scrollbars/offsets */
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
 @media (max-width: 768px) {
   .content-wrapper {
     padding-top: 24px;   /* Tighter top margin beneath header */
-    padding-left: 20px;  /* Fits comfortably on smaller phone edges */
-    padding-right: 20px;
+    padding-left: 16px;  /* Fits comfortably on smaller phone edges */
+    padding-right: 16px;
     display: flex;
     justify-content: center; /* Centers the card on mobile screens */
   }
