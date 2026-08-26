@@ -17,7 +17,7 @@
         </script>
     </div>
     </body>
-
+<main class="content-wrapper">
   <div class="game-card">
     <!-- Game Cover -->
     <a href="blus_time_machine" class="game-capsule">
@@ -33,6 +33,7 @@
       </a>
     </div>
   </div>
+ </main> 
 <div id="footer-placeholder">
         <script>
             fetch('../footer.html')
@@ -54,7 +55,13 @@
   justify-content: center;
   padding: 20px;
 }
-
+/* Page Layout Wrapper */
+.content-wrapper {
+  padding-top: 48px;     /* Increases distance between header and game card */
+  padding-left: 48px;    /* Pushes content comfortably away from the left screen edge */
+  padding-bottom: 48px;
+  max-width: 1200px;
+}
 /* Card Container */
 .game-card {
   width: 300px;
@@ -117,22 +124,28 @@
 
 
 @media (max-width: 768px) {
-  .games-grid {
-    grid-template-columns: 1fr !important; /* One big game card per row */
-    gap: 20px;
-    padding: 0 16px;
+  .content-wrapper {
+    padding-top: 24px;   /* Tighter top margin beneath header */
+    padding-left: 20px;  /* Fits comfortably on smaller phone edges */
+    padding-right: 20px;
+    display: flex;
+    justify-content: center; /* Centers the card on mobile screens */
   }
 
-  .game-capsule {
-    width: 100%;
-    height: auto;
+  .game-card {
+    max-width: 280px; /* Slightly smaller display footprint for phones */
   }
 
-  .game-capsule img {
-    width: 100%;
-    height: auto;
-    display: block;
+  /* Increase tap target size for mobile fingers */
+  .platform-link {
+    padding: 12px; 
   }
+
+  .steam-icon {
+    width: 32px; /* Slightly larger icon so it's easy to tap */
+    height: 32px;
+  }
+}
 
 }
 </style>
